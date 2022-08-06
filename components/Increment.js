@@ -1,11 +1,16 @@
+import { useDispatch } from 'react-redux';
+import { increment } from '../redux/counter';
+
 export default function Increment({count, setCount}) {
 
-  function handleIncrement(e) {
-    e.preventDefault();
-    setCount(count+1);
-  }
+  const dispatch = useDispatch();
+
+  // function handleIncrement(e) {
+  //   e.preventDefault();
+  //   setCount(count+1);
+  // }
 
   return(
-    <button onClick={handleIncrement}>Increment</button>
+    <button onClick={() => dispatch(increment())}>Increment</button>
   )
 }

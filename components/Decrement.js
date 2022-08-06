@@ -1,11 +1,16 @@
-export default function Decrement({count, setCount}) {
+import { useDispatch } from 'react-redux';
+import { decrement } from '../redux/counter';
 
-  function handleDecrement(e) {
-    e.preventDefault();
-    setCount(count-1);
-  }
+export default function Decrement() {
+
+  const dispatch = useDispatch();
+
+  // function handleDecrement(e) {
+  //   e.preventDefault();
+  //   dispatch(decrement());
+  // }
 
   return(
-    <button onClick={handleDecrement}>Decrement</button>
+    <button onClick={() => dispatch(decrement())}>Decrement</button>
   )
 }
