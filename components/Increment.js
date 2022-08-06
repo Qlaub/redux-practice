@@ -1,6 +1,11 @@
-export default function Increment() {
+export default function Increment({count, setCount}) {
+
+  function handleIncrement(e) {
+    e.preventDefault();
+    setCount(count+1);
+  }
 
   return(
-    <div></div>
+    <button onClick={handleIncrement}>Increment</button>
   )
 }

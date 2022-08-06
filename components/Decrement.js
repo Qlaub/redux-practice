@@ -1,6 +1,11 @@
-export default function Decrement() {
+export default function Decrement({count, setCount}) {
+
+  function handleDecrement(e) {
+    e.preventDefault();
+    setCount(count-1);
+  }
 
   return(
-    <div></div>
+    <button onClick={handleDecrement}>Decrement</button>
   )
 }
